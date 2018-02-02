@@ -29,30 +29,29 @@ Just import the client, create an instance and call the ``fetch_json`` method:
     from freckle_client.client import FreckleClient
 
     client = FreckleClient('account_name', 'api_token')
-    entries = self.fetch_json(
+    entries = client.fetch_json(
         'entries',
         query_params={
             'per_page': 1000,
             'search[from]': '2015-01-01',
             'search[to]': '2015-01-31',
-            'search[projects]': [1423, 24545, ]),
+            'search[projects]': [1423, 24545, ],
         }
     )
 
 Or if you want to use the V2 API:
 
 .. code-block:: python
-
     from freckle_client.client import FreckleClientV2
 
     client = FreckleClientV2('access_token')
-    entries = self.fetch_json(
+    entries = client.fetch_json(
         'entries',
         query_params={
             'per_page': 1000,
             'search[from]': '2015-01-01',
             'search[to]': '2015-01-31',
-            'search[projects]': [1423, 24545, ]),
+            'search[projects]': [1423, 24545, ],
         }
     )
 
